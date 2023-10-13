@@ -265,3 +265,19 @@
     color: #606060;
     line-height: 20px;
 }
+
+/* RWD_內容 */
+@media (min-width: 1658px) {
+    #content .page-video div .video-cover{
+        width: 297px;
+        height: 175.5px;
+        background:peru;
+        object-fit: contain;
+    }
+    #content .page-video div .video-cover img{
+        width: 297px;
+        height: 175.5px;
+        border-radius: 12px;
+        background-size: contain;
+    }
+}
