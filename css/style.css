@@ -23,7 +23,7 @@
     vertical-align: 50%;
 }
 
-#header div:nth-child(2){
+#header>div:nth-child(2){
     display: flex;
 }
 .search-box{
