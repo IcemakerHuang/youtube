@@ -26,6 +26,8 @@
 #header>div:nth-child(2){
     display: flex;
 }
+
+/* 中間 search */
 .search-box{
     box-sizing: border-box;
     width: 515px;
@@ -47,6 +49,29 @@
     border-radius: 0 28px 28px 0;
     border-left: none;
     padding: 0;
+
+    cursor: pointer;
+}
+.search-btn i{
+    font-size: 1.2rem;
+}
+.record_btn{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #efefef;
+    margin-left: 12px;
+
+    cursor: pointer;
+}
+.record_btn i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    font-size: 1.2rem;
 }
 
 #header .headerLogin{
@@ -183,6 +208,8 @@
 /* 內容_首頁影片 */
 #content .page-video{
     padding: 24px 16px 0 16px;
+    height: 670px;
+    overflow: hidden;
 }
 #content .page-video>div{
     float: left;
@@ -223,7 +250,6 @@
     height: 36px;
     margin: 12px 12px 0 0;
     border-radius: 50%;
-    background:pink;
 }
 
 #content .page-video div .video-text h3{
@@ -238,8 +264,9 @@
 }
 
 
-.page-video hr{
-    display: inline-block;
+#content .page-video hr{
+    clear: both;
+    display: block;
 }
 
 /* 內容_Short */
@@ -282,7 +309,11 @@
 }
 
 /* RWD_內容 */
-/* @media (min-width: 1658px) {
+@media (min-width: 1690px) {
+    #content .page-video{
+        height: 630px;
+        overflow: hidden;
+    }
     #content .page-video div .video-cover{
         width: 297px;
         height: 175.5px;
@@ -295,4 +326,9 @@
         border-radius: 12px;
         background-size: contain;
     }
-} */
+    #content .page-video div .video-text{
+        width: 297px;
+        /* height: 195px; */
+        background:pink;
+    }
+}
