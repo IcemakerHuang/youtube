@@ -1,11 +1,12 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 #header{
     width: 100%;
+    height: 56px;
     display: flex;
     justify-content: space-between;
     /* height: 60px; */
-    background: lightblue;
+    background: #ffffff;
     padding: 8px 16px;
 
     position: fixed;
@@ -78,6 +79,7 @@
     /* float: right; */
     display: flex;
     padding: 5px 48px 0 0;
+    cursor: pointer;
 }
 #header .headerLogin>i{
     font-size: 1rem;
@@ -89,11 +91,12 @@
 #sidebar{
     height: calc(100vh - 60px);
     width: 240px;
-    background: lightgoldenrodyellow;
+    /* background: lightgoldenrodyellow; */
     position: fixed;
     left: 0 ;
     top: 60px ;
 
+    font-family: 'Roboto', sans-serif, '微軟正黑體';
     overflow: scroll;
 }
 #sidebar ul h1{
@@ -110,7 +113,17 @@
     height: 40px;
     font-size: 0.9rem;
     list-style: none;
-    line-height: 2rem;
+    line-height: 2.5rem;
+}
+#sidebar li{
+    /* 排除ul */
+    cursor: pointer;
+}
+#sidebar li:hover{
+    width: 180px;
+    height: 40px;
+    border-radius: 15px;
+    background: rgb(241, 241, 241);
 }
 #sidebar ul li i{
     padding-right: 24px;
@@ -119,9 +132,11 @@
 /* 側邊選單_登入 */
 #sidebar .sidebarLogin{
     padding: 16px 22px;
+    cursor: pointer;
 }
 #sidebar .sidebarLogin p{
     font-size: 0.9rem;
+    line-height: 1.25;
     margin-bottom: 12px;
 }
 .sidebarLogin-button{
@@ -162,6 +177,7 @@
     font-size: 0.6rem;
     color: #909090;
 }
+
 /* 內容 */
 #content{
     /* position: fixed;
@@ -172,13 +188,20 @@
     height: 100vh;
     margin-top: 60px;
     margin-left: 240px;
-    background: lightgreen;
+    /* background: lightgreen; */
+
+    font-family: 'Roboto', sans-serif, '微軟正黑體';
 }
 /* 內容_影片分類 */
 #content .page{
     /* width: calc(100% - 240px); */
+    width:100%;
+    position: fixed;
+    top: 56px;
+    left: 240px;
+
     height: 56px;
-    background: lightyellow;
+    background: #FFFFFF;
     overflow: hidden;
 }
 #content .page div{
@@ -195,18 +218,22 @@
 
     transition: 0.3s;
 }
+/* #content .page div:focus{
+    background: #000;
+    color: white;
+    cursor: pointer;
+} */
 #content .page div:hover{
     background: #dbdbdb;
     cursor: pointer;
 }
+
 #content .page div:nth-child(1){
     margin-left: 12px;
-    background: #000;
-    color: white;
-    cursor: pointer;
 }
 /* 內容_首頁影片 */
 #content .page-video{
+    margin-top: 100px;
     padding: 24px 16px 0 16px;
     height: 670px;
     overflow: hidden;
@@ -222,19 +249,23 @@
 #content .page-video div .video-cover{
     width: 330px;
     height: 195px;
-    background:peru;
+    /* background:peru; */
     object-fit: contain;
 }
 #content .page-video div .video-cover img{
     width: 330px;
     height: 195px;
     border-radius: 12px;
-    background-size: contain;
 }
+#content .page-video div .video-cover img:hover{
+    border-radius: 0;
+    transition: 0.3s;
+}
+
 #content .page-video div .video-text{
     width: 330px;
     /* height: 195px; */
-    background:pink;
+    /* background:pink; */
 }
 #content .page-video div .video-text div:nth-child(1){
     float: left;
@@ -253,14 +284,25 @@
 }
 
 #content .page-video div .video-text h3{
-    padding: 12px 0 4px 0;
+    padding-top: 12px;
     font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 1.25;
+    /* 多行文字截斷 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 #content .page-video div .video-text h4,
 .video-text h5{
     font-size: 14px;
     color: #606060;
     line-height: 20px;
+    /* 單行文字截斷 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
@@ -299,13 +341,26 @@
     background-size: contain;
 }
 #content .page-short div h2{
-    padding: 12px 24px 8px 0;
+    padding: 12px 24px 0 0;
+    margin-bottom: 8px;
     font-weight: 500;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 #content .page-short div h3{
     font-size: 14px;
     color: #606060;
     line-height: 20px;
+}
+/* hr分隔線 */
+hr{
+    /* hr原本是border線 */
+    border:none;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* RWD_內容 */
@@ -317,7 +372,7 @@
     #content .page-video div .video-cover{
         width: 297px;
         height: 175.5px;
-        background:peru;
+        /* background:peru; */
         object-fit: contain;
     }
     #content .page-video div .video-cover img{
@@ -329,6 +384,6 @@
     #content .page-video div .video-text{
         width: 297px;
         /* height: 195px; */
-        background:pink;
+        /* background:pink; */
     }
 }
